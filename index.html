@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Hidden form for Netlify to detect -->
+    <form name="prom-rsvp" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <textarea name="message"></textarea>
+    </form>
+    
     <div class="stars"></div>
     <div class="twinkling"></div>
     
@@ -56,7 +64,7 @@
 
             <!-- RSVP Form (hidden by default) -->
             <div id="rsvp-form-container" class="rsvp-form-container" style="display: none;">
-                <form id="rsvp-form" class="rsvp-form" method="POST" data-netlify="true" name="prom-rsvp" action="/thanks.html">
+                <form id="rsvp-form" class="rsvp-form" method="POST" data-netlify="true" name="prom-rsvp" action="/success">
                     <input type="hidden" name="form-name" value="prom-rsvp">
                     <h3>Няколко бързи детайла</h3>
                     

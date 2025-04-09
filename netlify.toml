@@ -1,17 +1,26 @@
 [build]
   publish = "."
 
-# Redirect rule for successful form submissions
+# Form success redirect
 [[redirects]]
   from = "/success"
   to = "/thanks.html"
   status = 302
 
-# Fallback for any 404 errors
+# Correct path for the thanks page
+[[redirects]]
+  from = "/thanks.html"
+  to = "/thanks.html"
+  status = 200
+
+# Default fallback 
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 404
+  status = 200
+
+[build.processing]
+  skip_processing = false
 
 # Form handling settings
 [build.processing.html]
