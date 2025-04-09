@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prom 2025 Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header animate__animated animate__fadeInDown">
+                <h1>Кристиян  <span class="year">2025</span></h1>
+                <p class="tagline">Бал, който няма да забравим</p>
+            </div>
+            
+            <div class="content animate__animated animate__fadeIn animate__delay-1s">
+                <p class="invite-text">Ти си поканен на най-якия бал на годината</p>
+                <p class="funny-text">"Защото скролването през TikTok вече е скучно"</p>
+                
+                <div class="details">
+                    <div class="detail-item animate__animated animate__fadeInLeft animate__delay-2s">
+                        <span class="icon">📅</span>
+                        <span class="info">Май 25, 2025</span>
+                    </div>
+                    <div class="detail-item animate__animated animate__fadeInLeft animate__delay-2s">
+                        <span class="icon">🕗</span>
+                        <span class="info">12:30 - обед</span>
+                    </div>
+                    <div class="detail-item animate__animated animate__fadeInLeft animate__delay-2s">
+                        <span class="icon">📍</span>
+                        <span class="info">Ресторант "ФЛОРА"</span>
+                    </div>
+                    <div class="detail-item animate__animated animate__fadeInLeft animate__delay-2s">
+                        <span class="icon">👗</span>
+                        <span class="info">Формално облекло</span>
+                    </div>
+                </div>
+                
+                <p class="funny-quote">"Танцувай, сякаш никой не гледа, но не забравяй всеки снима за Instagram"</p>
+            </div>
+            
+            <div class="rsvp-section animate__animated animate__fadeInUp animate__delay-3s">
+                <h2>Ще приемеш ли поканата?</h2>
+                <div class="button-container">
+                    <button id="yes-btn" class="rsvp-btn">Абсолютно!</button>
+                    <button id="no-btn" class="rsvp-btn no-btn">Ще пропусна</button>
+                </div>
+                <p id="response-message"></p>
+            </div>
+
+            <!-- RSVP Form (hidden by default) -->
+            <div id="rsvp-form-container" class="rsvp-form-container" style="display: none;">
+                <form id="rsvp-form" class="rsvp-form" method="POST" data-netlify="true" name="prom-rsvp" action="/thanks.html">
+                    <input type="hidden" name="form-name" value="prom-rsvp">
+                    <h3>Няколко бързи детайла</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Твоето име</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Твоя имейл</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Твоят телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Други важни неща</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Диетични ограничения, песни, и т.н."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Изпрати</button>
+                </form>
+            </div>
+            
+            <div class="footer animate__animated animate__fadeIn animate__delay-4s">
+                <p>Бърни танците и най-добрите си движения!</p>
+                <p class="hashtag">#Prom2025 #NightToRemember</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="confetti-container"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

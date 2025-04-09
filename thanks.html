@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for your RSVP!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header animate__animated animate__fadeInDown">
+                <h1>Благодарим! <span class="year">2025</span></h1>
+                <p class="tagline">Вашата заявка е получена</p>
+            </div>
+            
+            <div class="thanks-message animate__animated animate__fadeIn">
+                <h2>Ти си официално в списъка с гости!</h2>
+                <p>Получихме твоята заявка и нямаме търпение да се видим!</p>
+            
+                
+                <div class="detail-item animate__animated animate__fadeInLeft animate__delay-1s">
+                    <span class="icon">📅</span>
+                    <span class="info">Май 25, 2025</span>
+                </div>
+                
+                <p class="funny-quote animate__animated animate__fadeIn animate__delay-2s">
+                    "Започни да тренираш танците си сега... ще ти трябват!"
+                </p>
+                
+                <a href="index.html" class="back-btn animate__animated animate__fadeIn animate__delay-2s">
+                    Върни се към поканата
+                </a>
+            </div>
+            
+            <div class="footer animate__animated animate__fadeIn animate__delay-3s">
+                <p>Ще изпратим повече детайли по-близо до датата!</p>
+                <p class="hashtag">#Prom2025 #NightToRemember</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="confetti-container"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Auto trigger confetti when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger celebration confetti
+            const count = 200;
+            const defaults = {
+                origin: { y: 0.7 },
+                zIndex: 1000
+            };
+
+            function fire(particleRatio, opts) {
+                confetti({
+                    ...defaults,
+                    ...opts,
+                    particleCount: Math.floor(count * particleRatio)
+                });
+            }
+
+            fire(0.25, {
+                spread: 26,
+                startVelocity: 55,
+                colors: ['#ff9966', '#ff5e62']
+            });
+            fire(0.2, {
+                spread: 60,
+                colors: ['#6a11cb', '#9f80ff']
+            });
+            fire(0.35, {
+                spread: 100,
+                decay: 0.91,
+                scalar: 0.8,
+                colors: ['#43c6ac', '#80e5ff']
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 25,
+                decay: 0.92,
+                scalar: 1.2,
+                colors: ['#ffffff']
+            });
+            fire(0.1, {
+                spread: 120,
+                startVelocity: 45,
+                colors: ['#6d5df1', '#80e5ff']
+            });
+        });
+    </script>
+</body>
+</html> 

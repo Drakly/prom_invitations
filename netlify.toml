@@ -1,0 +1,18 @@
+[build]
+  publish = "."
+
+# Redirect rule for successful form submissions
+[[redirects]]
+  from = "/success"
+  to = "/thanks.html"
+  status = 302
+
+# Fallback for any 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Form handling settings
+[build.processing.html]
+  pretty_urls = true 
