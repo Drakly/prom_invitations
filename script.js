@@ -36,26 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         handleNo();
     });
     
-    // Handle form submission
-    if (rsvpForm) {
-        rsvpForm.addEventListener('submit', (e) => {
-            // Let Netlify handle the form submission
-            // After successful submission, Netlify will redirect to the success page
-            
-            // You can add form validation here if needed
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            if (!name || !email) {
-                e.preventDefault();
-                alert('Please fill in all required fields');
-                return;
-            }
-            
-            // If not using Netlify's automatic redirects, you can set a custom redirect
-            // However, Netlify's default behavior works well
-        });
-    }
+    // IMPORTANT: We're NOT adding any submit handlers to the form
+    // Let Netlify handle the form submission natively
     
     // Add parallax effect to elements
     document.addEventListener('mousemove', createParallaxEffect);
