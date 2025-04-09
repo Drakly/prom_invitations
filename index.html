@@ -62,9 +62,9 @@
                 <p id="response-message"></p>
             </div>
 
-            <!-- RSVP Form (hidden by default) -->
+            <!-- Visible form in the RSVP section -->
             <div id="rsvp-form-container" class="rsvp-form-container" style="display: none;">
-                <form id="rsvp-form" class="rsvp-form" method="POST" data-netlify="true" name="prom-rsvp" action="/success">
+                <form id="rsvp-form" class="rsvp-form" method="POST" netlify name="prom-rsvp" action="/success">
                     <input type="hidden" name="form-name" value="prom-rsvp">
                     <h3>Няколко бързи детайла</h3>
                     
@@ -103,5 +103,33 @@
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Let's add a simple debug section to the page for testing purposes -->
+    <div style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px; z-index: 9999; font-size: 12px;">
+        <p>Form test: <a href="#" onclick="document.getElementById('rsvp-form-container').style.display='block'; return false;">Show form</a></p>
+    </div>
+
+    <script>
+        // Add this to the bottom of your body tag to help debug form issues
+        document.addEventListener('DOMContentLoaded', function() {
+            // Log that the page is loaded
+            console.log('Page loaded, checking for form elements...');
+            
+            // Check if the form exists
+            const form = document.getElementById('rsvp-form');
+            console.log('Form found:', !!form);
+            
+            if (form) {
+                // Add event listener to log form submission
+                form.addEventListener('submit', function(e) {
+                    console.log('Form submitted!');
+                    // Don't prevent default - let Netlify handle it
+                });
+            }
+            
+            // For testing purposes, you can uncomment this to show the form immediately
+            // document.getElementById('rsvp-form-container').style.display = 'block';
+        });
+    </script>
 </body>
 </html> 
